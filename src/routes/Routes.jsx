@@ -13,7 +13,7 @@ const Routes = () => {
       <div className="header-container h-20 ">
         <Header></Header>
       </div>
-      <div className="main-container grow ">
+      <div className="main-container grow">
         <RoutesDom>
           <Route path="/" element={<Home />} />
         </RoutesDom>
