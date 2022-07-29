@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Routes from "./routes/Routes";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+/* react route v6 */
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </React.StrictMode>
-)
+);
