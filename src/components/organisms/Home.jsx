@@ -1,9 +1,15 @@
 import React from "react";
 
+/* components */
+import PaginatorPrime from "../molecules/paginator/PaginatorPrime";
+
+
 const Home = () => {
   return (
     <div className="Home">
-      <h2>test home</h2>
+      <div className="paginator-container">
+        <PaginatorPrime></PaginatorPrime>
+      </div>
     </div>
   );
 };
