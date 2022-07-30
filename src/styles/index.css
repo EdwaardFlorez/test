@@ -1,0 +1,26 @@
+/* font */
+/* @import './fonts/LemonDays.ttf'; */
+/* normalize */
+@import "./normalize.css";
+/* React Prime */
+@import "primereact/resources/themes/lara-dark-indigo/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Lemon";
+  src: local("Lemon"),
+    url("./fonts/LemonDays.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+    font-family: "BestFriends";
+    src: local("BestFriends"),
+      url("./fonts/BestFriendsFont.ttf") format("truetype");
+    font-weight: normal;
+  }

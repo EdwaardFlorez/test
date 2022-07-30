@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 /* react prime */
 import { Paginator } from "primereact/paginator";
@@ -6,24 +6,33 @@ import { Paginator } from "primereact/paginator";
 /* css */
 import "./PaginatorDemo.css";
 
-const PaginatorPrime = () => {
+/* redux */
+import { connect } from "react-redux";
+import { heroesAction } from "../../../redux/actions";
+
+const PaginatorPrime = ({ heroesAction, heroes }) => {
   const [basicFirst, setBasicFirst] = useState(0);
-  const [basicRows, setBasicRows] = useState(10);
+  const [rows, setRows] = useState(10);
+  const [page, setPage] = useState(0);
+  const [totalRecords, setTotalRecords] = useState(100);
+
+  useEffect(() => {}, []);
 
   const onBasicPageChange = (event) => {
-    console.log("eve", event);
+    let page = event.page + 1;
+    let rows = event.rows;
+    heroesAction(rows, page);
     setBasicFirst(event.first);
-    setBasicRows(event.rows);
+    setRows(event.rows);
   };
 
   return (
     <div className="paginator-demo">
       <div className="card">
-        <h5>Basic</h5>
         <Paginator
           first={basicFirst}
-          rows={basicRows}
-          totalRecords={120}
+          rows={rows}
+          totalRecords={totalRecords}
           rowsPerPageOptions={[10, 20, 30]}
           onPageChange={onBasicPageChange}
         ></Paginator>
@@ -32,4 +41,12 @@ const PaginatorPrime = () => {
   );
 };
 
-export default PaginatorPrime;
+const mapStateToProps = (state) => {
+  return {
+    heroes: state.heroes,
+  };
+};
+
+export default connect(mapStateToProps, {
+  heroesAction: heroesAction,
+})(PaginatorPrime);

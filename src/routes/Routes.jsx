@@ -10,10 +10,10 @@ import Home from "../components/organisms/Home";
 const Routes = () => {
   return (
     <div className="Routes w-screen h-screen flex flex-col">
-      <div className="header-container h-20 ">
+      <div className="header-container h-20 bg-black">
         <Header></Header>
       </div>
-      <div className="main-container grow">
+      <div className="main-container grow bg-black">
         <RoutesDom>
           <Route path="/" element={<Home />} />
         </RoutesDom>

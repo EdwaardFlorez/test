@@ -1,0 +1,7 @@
+/* .mb-3{
+    height: 1000px;
+} */
+
+ul.p-carousel-indicators.p-reset {
+  visibility: hidden;
+}
